@@ -4,4 +4,6 @@
 <h1>Bienvenido al curso: {{$curso->name}}</h1>
 <p>{{$curso->descripcion}}</p>
 <a href="{{route('cursos.index')}}">Regresar a cursos</a>
+<br>
+<a href="{{route('cursos.edit', $curso)}}">editar</a>
 @endsection
