@@ -13,4 +13,6 @@ class Curso extends Model
      * protected $table = "nombre_de_tabla";
      */
     use HasFactory;
+
+    protected $fillable = ['name', 'descripcion'];
 }

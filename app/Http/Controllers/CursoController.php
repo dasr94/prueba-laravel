@@ -23,12 +23,16 @@ class CursoController extends Controller
 
     public function store(StoreCurso $request){
 
-        $curso = new Curso();
-
+        /* $curso = new Curso();
         $curso->name = $request->name;
         $curso->descripcion = $request->descripcion;
-
-        $curso->save();
+        $curso->save(); */
+        /* OTRA FORMA: */
+        /* $curso = Curso::created([
+            'name' => $request->name,
+            'descripcion' => $request->descripcion
+        ]); */
+        $curso = Curso::create($request->all());
         return redirect()->route('cursos.show', $curso);
     }
 
