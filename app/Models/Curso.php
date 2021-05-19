@@ -14,5 +14,11 @@ class Curso extends Model
      */
     use HasFactory;
 
-    protected $fillable = ['name', 'descripcion'];
+    /**
+     * @param $fillable
+     * con la variable $fillable ponemos solo los campos que queremos guardar
+     * con la variable guarded ponemos solo el CAMPO que queremos obviar, por ejemplo el campo "status" de una tabla, por ejemplo se quedara vacio
+     */
+    //protected $fillable = ['name', 'descripcion'];
+    protected $guarded = [];
 }

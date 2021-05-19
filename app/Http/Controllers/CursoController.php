@@ -52,10 +52,21 @@ class CursoController extends Controller
             'descripcion' => 'required'
         ]);
 
-        $curso->name = $request->name;
+        /* $curso->name = $request->name;
         $curso->descripcion = $request->descripcion;
+        $curso->save(); */
 
-        $curso->save();
+        /**
+         * SE ACCEDE AL OBJETO, ya se tiene en la declaracion de los parametros de la funcion
+         */
+
+        $curso->update($request->all());
+
         return redirect()->route('cursos.show', $curso);
+    }
+
+
+    public function destroy(Curso $curso){
+        return $curso->delete();
     }
 }
